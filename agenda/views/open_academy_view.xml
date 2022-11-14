@@ -38,9 +38,9 @@
         <field name="view_mode">tree, form</field>    
     </record>
 
-    <menuitem id="menu_open_academy_parent" name="Academy" sequence="10" />
+    <menuitem id="menu_open.academy_parent" name="Academy" sequence="10" />
 
-    <menuitem id="menu_open_academy" sequence="5" 
-            action="action_open_academy" 
-            parent="menu_open_academy_parent"/>
+    <menuitem id="menu_open.academy" sequence="5" 
+            action="action_open.academy" 
+            parent="menu_open.academy"/>
 </odoo>
