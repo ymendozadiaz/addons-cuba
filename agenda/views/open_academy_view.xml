@@ -2,7 +2,7 @@
 
 <odoo>
     <record model="ir.ui.view" id="view_open_academy">
-        <field name="name">view_open_academy_list</field>
+        <field name="name">view.open.academy.list</field>
         <field name="model">open.academy</field>
         <field name="priority" eval="16"/>
         <field name="arch" type="xml">
@@ -14,7 +14,7 @@
     </record> 
 
     <record model="ir.ui.view" id="view_open_academy_form">
-        <field name="name">view_open_academy_list</field>
+        <field name="name">view.open.academy.form</field>
         <field name="model">open.academy</field>
         <field name="priority" eval="16"/>
         <field name="arch" type="xml">
@@ -38,9 +38,8 @@
         <field name="view_mode">tree, form</field>    
     </record>
 
-    <menuitem id="menu_open.academy_parent" name="Academy" sequence="10" />
+    <menuitem id="menu_open_academy_parent" name="Academy" sequence="10" />
 
-    <menuitem id="menu_open.academy" sequence="5" 
-            action="action_open.academy" 
-            parent="menu_open.academy"/>
+    <menuitem id="menu_open_academy" sequence="5" action="action_open_academy" parent="menu_open_academy_parent"/>
+
 </odoo>
