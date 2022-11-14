@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 {
     'name': 'Agenda',
@@ -9,7 +9,7 @@
     'summary': 'Short summary.',
     'depends': ['contacts'],
     'data': [
-        'view/open_academy_view.xml',
+        'views/open_academy_view.xml',
     ],
     'images': ['static/description/codies.ico'],
 }
