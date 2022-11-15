@@ -24,9 +24,27 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <!-- <field name="inventor_id" /> -->                        
+                            <field name="partner_id" string="Teacher" required="True" />                                 
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Students">
+                            <field name="partner_ids" nolabel="1" readonly="True">
+                                <tree string="Students">
+                                    <field name="name" />
+                                    <field name="street" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Students">
+                            <field name="partner_ids" nolabel="1" >
+                                <tree string="Students">
+                                    <field name="name" />
+                                    <field name="street" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

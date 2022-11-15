@@ -1,1 +1,1 @@
-from .models import open_academy
+from . import models
