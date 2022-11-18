@@ -9,7 +9,9 @@
     'category': 'Productivity',
     'website': 'https://www.odoomates.tech',
     'depends' : [],
-    'data': [],
+    'data': [
+        'views/patient.xml'
+    ],
     'demo': [],
     'qweb': [],
     'installable': True,
