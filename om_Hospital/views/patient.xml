@@ -14,7 +14,7 @@
     </record>
 
     <menuitem id="hospital_root"
-              name="hospital"   
+              name="Hospital"   
               sequence="10"/>
 
     <menuitem id="hospital_patient_root"
