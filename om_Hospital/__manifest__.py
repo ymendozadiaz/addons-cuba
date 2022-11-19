@@ -8,10 +8,11 @@
     'description': """Hospital Management Software""",
     'category': 'Productivity',
     'website': 'https://www.odoomates.tech',
-    'depends' : [],
+    'depends' : ['sale'],
     'data': [
         'security/ir.model.access.csv',
-        'views/patient.xml'
+        'views/patient.xml',
+        'views/sale.xml'
     ],
     'demo': [],
     'qweb': [],
