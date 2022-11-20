@@ -14,6 +14,7 @@
         'views/patient.xml',
         'views/sale.xml'
     ],
+    'images': ['.static/description/mycomputer.ico'],
     'demo': [],
     'qweb': [],
     'installable': True,
