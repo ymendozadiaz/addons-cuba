@@ -34,6 +34,19 @@
         </field>
     </record>
 
+    <record id="patient_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>  
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Patiens">
+                <field name="name"/>
+                <field name="note"/>
+                <separator/>
+
+            </search>
+        </field>
+    </record>
+
     <record id="patient_action" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="type">ir.actions.act_window</field>
