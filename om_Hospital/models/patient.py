@@ -12,7 +12,6 @@ class HospitalPatient(models.Model):
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
-        ('male', 'Male'),
-        ('other', 'Other'),
-    ], required=True, default='Male')
+        ('other', 'Other')
+    ], required=True, default='male')
     note = fields.Text(string='Description')
