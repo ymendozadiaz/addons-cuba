@@ -54,9 +54,16 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form>
+                <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary" 
+                        states="draft" type="object"/>
+                <button id="button_done" name="action_done" string="Marck As Done" class="btn-primary" 
+                        states="confirm" type="object"/>
+                <button id="button_draft" name="action_draft" string="Set to Draft" class="btn-primary" 
+                        states="cancel" type="object"/>
+                <button id="button_cancel" name="action_cancel" string="Cancel" states="draft,done,confirm"
+                        type="object"/>
                 <header>
-                    <field name="state" widget="statusbar" opctions="{'clickable': '1'}"
-                            statusbar_visible="draft,done,confirm"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done,confirm"/>
                 </header>
                 <sheet>
                     <group>
