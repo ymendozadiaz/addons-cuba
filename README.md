@@ -1,4 +1,4 @@
-# addons-cuba-agenda_2022
+# addons-cuba-om_hospital_2022
 Primer Módulo para Odoo
 
 Resumen
