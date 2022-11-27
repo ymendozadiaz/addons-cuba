@@ -79,7 +79,7 @@
                             <field name="age"/>
                         </group>
                         <group>
-                            <field name="gender"/>
+                            <field name="gender" invisible="context.get('hide_gender')"/>
                             <field name="note"/>
                         </group>
                     </group>
