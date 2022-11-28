@@ -16,6 +16,9 @@ class HospitalAppointment(models.Model):
                                  , ('cancel', 'Cancelled')], default='draft', string="Status", tracking=True)
     
     note = fields.Text(string='Description')
+    
+    date_appointment = fields.Date(string="Date")
+    date_checkup = fields.Datetime(string="Check Up Time")
 
     def action_confirm(self):
         self.state = 'confirm'
@@ -33,7 +36,7 @@ class HospitalAppointment(models.Model):
     def create(self, vals):
         if not vals.get('note'):
             vals['note'] = "New Patient"
-        if vals.get('reference', _('New')) == _('New'):
-            vals['reference'] = self.env['ir.sequence'].next_by_code('hospital.appointment') or _('New')
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment') or _('New')
         res = super(HospitalAppointment, self).create(vals)
         return res

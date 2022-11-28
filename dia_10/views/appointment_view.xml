@@ -22,7 +22,7 @@
                             confirm="Are you sure that you need to confirm ?" type="object" />
                     <button id="button_done" name="action_done" string="Mark As Done" class="btn_primary" states="confirm"
                             type="object"/>
-                    <button id="button_draf" name="action_draf" string="Set to Draft" class="btn_primary" states="cancel"
+                    <button id="button_draf" name="action_draft" string="Set to Draft" class="btn_primary" states="cancel"
                             type="object"/>
                     <button id="button_cancel" name="action_cancel" string="cancel" class="btn_primary" states="draft,done,confirm,"
                             confirm="Are you sure that you need to cancel ?"
@@ -40,6 +40,8 @@
                             <field name="patient_id"/>
                         </group>
                         <group>
+                            <field name="date_appointment"/>
+                            <field name="date_checkup"/>
                             <field name="note"/>
                         </group>
                     </group>
@@ -83,14 +85,14 @@
 
     <menuitem id="menu_appointment_root"
               name="Appointments"
-              parent="menu_appointment_root"   
+              parent="hospital_root"   
               sequence="20"/>
 
     <menuitem id="menu_appointment"
               name="Appointments"
-              parent="menu_appointment_root" 
+              parent="menu_appointment_root"
               action="action_hospital_appointment"   
-              sequence="10"/>
+              sequence="10"/> 
 
 
 </odoo>
