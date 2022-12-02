@@ -23,7 +23,7 @@
         <field name="res_model">create.appointment.wizard</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="view_create_appointment_form"/>
-        <field name="target">new</field>
+
     </record>
 
     <menuitem id="menu_create_appointment"
