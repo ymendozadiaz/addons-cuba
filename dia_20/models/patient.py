@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
+from odoo.exception import ValidationError
 
 
 
@@ -9,11 +10,11 @@ class HospitalPatient(models.Model):
     _description = "Hospital Patient"
     _order = "id desc"
 
-@api.model
-def default_get(self, fields):
-    res = super(HospitalPatient, self).default_get(fields)
-    res['note'] = 'New Patient Created'
-    return res
+    @api.model
+    def default_get(self, fields):
+        res = super(HospitalPatient, self).default_get(fields)
+        res['note'] = 'New Patient Created'
+        return res
     
     
     name = fields.Char(string='Name', required=True, tracking=True)
