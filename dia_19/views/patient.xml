@@ -98,6 +98,23 @@
                             <field name="note"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Appointments" name="appointment">
+                            <field name="appointment_ids" readonly="1">
+                                <tree create="0" delete="0" edit="0">
+                                    <field name="name"/>
+                                    <field name="doctor_id"/>
+                                    <field name="patient_id"/>
+                                    <field name="age"/>
+                                    <field name="gender" optional="show"/>
+                                    <field name="date_appointment" optional="show"/>
+                                    <field name="date_checkup" optional="hide"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="state" optional="show"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
