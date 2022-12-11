@@ -20,7 +20,7 @@
                                         <table>
                                             <tr>
                                                 <td colspan="3" class="text-center">
-                                                    <span t-field="o.name" />
+                                                    <span t-field="o.name"/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -46,7 +46,7 @@
                                                     <span>:</span>
                                                 </td>
                                                 <td>
-                                                    <span t-field="o.reference" />
+                                                    <span t-field="o.reference"/>
                                                 </td>
                                             </tr>
                                         </table>
