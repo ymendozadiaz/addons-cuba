@@ -1,2 +1,0 @@
-# agenda
- modulos odoo 

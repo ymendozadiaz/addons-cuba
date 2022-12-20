@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="libros_form_view" model="ir.ui.view">
+        <field name="name">libros.form.view</field>
+        <field name="model">libros</field>
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="editorial"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

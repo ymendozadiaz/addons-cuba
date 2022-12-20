@@ -1,2 +1,0 @@
-ir,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_open_academy,access_open_academy,model_open_academy,base.group_user,1,1,1,1
