@@ -6,3 +6,4 @@ class Libros(models.Model):
     _Description = 'Autor'
     
     name = fields.Char(string="Nombre")
+    last_name = fields.Char(string="Apellidos")

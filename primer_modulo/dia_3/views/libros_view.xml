@@ -6,6 +6,11 @@
         <field name="model">libros</field>
         <field name="arch" type="xml">
             <form string="Libro">
+                <header>
+                    <button name="boton_publicar" string="Publicar" type="object" states="draft" class="oe_highlight"/>
+                    <button name="boton_borrador" string="Borrador" type="object" states="published"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
                         <group col="1">
@@ -17,6 +22,7 @@
                             <field name="editorial"/>
                             <field name="isbn"/>
                             <field name="autor_id"/>
+                            <field name="lastname_autor"/>
                             <field name="categoria_id"/>
                         </group>
                     </group>
@@ -34,12 +40,13 @@
         <field name="name">libros.tree.view</field>
         <field name="model">libros</field>
         <field name="arch" type="xml">
-            <tree string="Libros">
+            <tree string="Libros" decoration-success="state == 'published'" decoration-info="state =='draft'">
                 <field name="name"/>
                 <field name="editorial"/>
                 <field name="isbn"/>
                 <field name="autor_id"/>
                 <field name="categoria_id"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'published'"/>
             </tree>
         </field>
     </record>
@@ -103,7 +110,11 @@
                 <filter name="categoria_cientifico" string="Científico" domain="[('categoria_id','=','Científico')]"/>
                 <group expand="0" string="Agrupar por" colspan="12" col="10">
                     <filter name="categoria" string="Categoria" context="{'group_by':'categoria_id'}"/>
-                </group>    
+                </group>
+                <searchpanel>
+                    <field name="categoria_id" string="Categorias" icon="fa-users"/>
+                    <field name="autor_id" string="Autores"/>
+                </searchpanel>
             </search>
         </field>
     </record>

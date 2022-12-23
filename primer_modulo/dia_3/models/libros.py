@@ -9,9 +9,17 @@ class Libros(models.Model):
     editorial = fields.Char(string="Editorial", required=True)
     isbn = fields.Char(string="ISBN", required=True)
     autor_id = fields.Many2one(comodel_name="autor", string="Autor", required=True)
+    lastname_autor = fields.Char(related="autor_id.last_name", string="Apellido del autor")
     image = fields.Binary(string="Image")
     categoria_id = fields.Many2one(comodel_name="categoria.libro")
+    state = fields.Selection([('draft','Borrador'),('published','Publicado')], default='draft')
     
+    def boton_publicar(self):
+        self.state = 'published'
+    
+    def boton_borrador(self):
+        self.state = 'draft'
+        
     _sql_contraints = [("name_uniq","unique (name)", "El nombre del libro ya existe!!")]
     
 class CategoriaLibro(models.Model):
