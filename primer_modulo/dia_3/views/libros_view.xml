@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="libros_form_view" model="ir.ui.view">
+        <field name="name">libros.form.view</field>
+        <field name="model">libros</field>
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <sheet>
+                    <group>
+                        <group col="1">
+                            <field name="image" widget="image" class="oe_left oe_avatar" nolabel="1"/>
+                        </group>
+                        <group col="2"/>
+                        <group col="2" colspan="2">
+                            <field name="name"/>
+                            <field name="editorial"/>
+                            <field name="isbn"/>
+                            <field name="autor_id"/>
+                            <field name="categoria_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="libros_tree_view" model="ir.ui.view">
+        <field name="name">libros.tree.view</field>
+        <field name="model">libros</field>
+        <field name="arch" type="xml">
+            <tree string="Libros">
+                <field name="name"/>
+                <field name="editorial"/>
+                <field name="isbn"/>
+                <field name="autor_id"/>
+                <field name="categoria_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="libros_kanban_view" model="ir.ui.view">
+        <field name="name">libros.kanban.view</field>
+        <field name="model">libros</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="editorial"/>
+                <field name="isbn"/>
+                <field name="autor_id"/>
+                <field name="categoria_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('libros','image',record.id.raw_value)" alt="Image"/>
+                            </div>
+                            <div class="o_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title oe_partner_heading">
+                                            <ul>
+                                                <li>
+                                                    Título: <field name="name"/>
+                                                </li>
+                                                <li>
+                                                    Editorial: <field name="editorial"/>
+                                                </li>
+                                                <li>
+                                                    isbn: <field name="isbn"/>    
+                                                </li>                                         
+                                                <li>
+                                                    Autor: <field name="autor_id"/>    
+                                                </li>
+                                                <li>
+                                                    Categoría: <field name="categoria_id"/>    
+                                                </li>
+                                            </ul>                                                                                  
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="libros_search_view" model="ir.ui.view">
+        <field name="model">libros.search.view</field>
+        <field name="model">libros</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Nombre del libro"/>
+                <field name="autor_id" string="Nombre del autor"/>
+                <filter name="categoria_cientifico" string="Científico" domain="[('categoria_id','=','Científico')]"/>
+                <group expand="0" string="Agrupar por" colspan="12" col="10">
+                    <filter name="categoria" string="Categoria" context="{'group_by':'categoria_id'}"/>
+                </group>    
+            </search>
+        </field>
+    </record>
+
+</odoo>
