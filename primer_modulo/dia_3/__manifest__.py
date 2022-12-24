@@ -10,12 +10,13 @@
     'author': 'Yosbel Mendoza Díaz',
     'category': 'Extra Tools',
     'version': '1.0.0.0',
-    'depends': ['mail'],
+    'depends': ['mail','hr'],
     'data': [
         'security/libreria_security.xml',
         'security/ir.model.access.csv',
         'views/menu_view.xml',
-        'views/libros_view.xml'
+        'views/libros_view.xml',
+        'views/hr_employee_view.xml'
         ],
     'installable': True,
     'application': True

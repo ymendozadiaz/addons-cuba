@@ -18,12 +18,14 @@
                         </group>
                         <group col="2"/>
                         <group col="2" colspan="2">
+                            <field name="supervisor_id" domain="[('is_supervisor', '=',True )]"/>
                             <field name="name"/>
                             <field name="editorial"/>
                             <field name="isbn"/>
                             <field name="autor_id"/>
                             <field name="lastname_autor"/>
                             <field name="categoria_id"/>
+                            <field name="description"/>
                         </group>
                     </group>
                 </sheet>
@@ -42,10 +44,10 @@
         <field name="arch" type="xml">
             <tree string="Libros" decoration-success="state == 'published'" decoration-info="state =='draft'">
                 <field name="name"/>
-                <field name="editorial"/>
-                <field name="isbn"/>
-                <field name="autor_id"/>
-                <field name="categoria_id"/>
+                <field name="editorial" optional="show"/>
+                <field name="isbn" optional="show"/>
+                <field name="autor_id" optional="show"/>
+                <field name="categoria_id" optional="show"/>
                 <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'published'"/>
             </tree>
         </field>

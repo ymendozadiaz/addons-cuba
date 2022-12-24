@@ -1,2 +1,2 @@
 from . import libros
-from . import autor
+from . import autor, hr_employee
