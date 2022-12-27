@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ticket_c_form" model="ir.ui.view"> 
+        <field name="name">ticket_c.form</field> 
+        <field name="model">ticket_c</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Ticket"> 
+                <header>
+                    <button id="button_validated" name="action_validated" string="validated" class="btn-primary" 
+                            states="new" confirm="Are you sure that you need to validated?" type="object"/>
+                    <button id="button_finish" name="action_finish" string="finish" class="btn-primary" 
+                            states="validated" confirm="Are you sure that you need to finish?" type="object"/>
+                    <button id="button_new" name="action_new" string="new" class="btn-primary" 
+                            states="cancel" confirm="Are you sure that you need to new?" type="object"/>
+                    <button id="button_cancel" name="action_cancel" string="Cancel" class="btn-primary" 
+                            states="new,validated,finish" confirm="Are you sure that you need to Cancel?" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,validated,finish,cancel"/>                    
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>                
+                    <group> 
+                        <field name="name"/>
+                        <field name="precio"/> 
+                        <field name="nota"/> 
+                    </group>
+                </sheet> 
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form> 
+        </field> 
+    </record> 
+
+    <record id="view_tree_ticket_c" model="ir.ui.view">
+        <field name="name">ticket_c.tree</field>
+        <field name="model">ticket_c</field>
+        <field name="arch" type="xml">
+            <tree name="Ticket">
+                <field name="name" />
+                <field name="precio" />
+                <field name="nota" />
+                <field name="state" widget="badge" decoration-info="state == 'new'" decoration-success="state == 'finish'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_ticket_c"> 
+        <field name="name">ticket_c</field> 
+        <field name="res_model">ticket_c</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="view_id"  ref="view_tree_ticket_c" /> 
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first ticket!
+            </p>
+        </field>    
+    </record> 
+
+<!--  Declaramos los menu --> 
+<menuitem id="ticket_c_menu" name="Ticket" web_icon="stock,static/description/icon.png" sequence="10"/> 
+<menuitem id="submenu_ticket_c_menu" name="Ticket" sequence="10" parent="ticket_c_menu"/> 
+<menuitem id="submenu_ticket_c_action" name="Ticket" sequence="10" parent="submenu_ticket_c_menu" action="act_ticket_c"/> 
+</odoo> 
