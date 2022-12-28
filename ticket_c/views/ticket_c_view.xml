@@ -2,7 +2,7 @@
 <odoo> 
 <!-- Comentario en la Views --> 
      <record id="view_ticket_c_form" model="ir.ui.view"> 
-        <field name="name">ticket_c.form</field> 
+        <field name="name">ticket.form</field> 
         <field name="model">ticket_c</field> 
         <field name="arch" type="xml"> 
             <form string="Listado de Ticket"> 
@@ -15,6 +15,8 @@
                             states="cancel" confirm="Are you sure that you need to new?" type="object"/>
                     <button id="button_cancel" name="action_cancel" string="Cancel" class="btn-primary" 
                             states="new,validated,finish" confirm="Are you sure that you need to Cancel?" type="object"/>
+                    <button id="button_factura" name="validate_move" string="Crear factura" class="btn-primary" 
+                            states="new,validated,finish" type="object"/>
                     <field name="state" widget="statusbar" statusbar_visible="new,validated,finish,cancel"/>                    
                 </header>
                 <sheet>
@@ -39,7 +41,7 @@
     </record> 
 
     <record id="view_tree_ticket_c" model="ir.ui.view">
-        <field name="name">ticket_c.tree</field>
+        <field name="name">ticket.tree</field>
         <field name="model">ticket_c</field>
         <field name="arch" type="xml">
             <tree name="Ticket">
@@ -66,5 +68,5 @@
 <!--  Declaramos los menu --> 
 <menuitem id="ticket_c_menu" name="Ticket" web_icon="stock,static/description/icon.png" sequence="10"/> 
 <menuitem id="submenu_ticket_c_menu" name="Ticket" sequence="10" parent="ticket_c_menu"/> 
-<menuitem id="submenu_ticket_c_action" name="Ticket" sequence="10" parent="submenu_ticket_c_menu" action="act_ticket_c"/> 
+<menuitem id="submenu_ticket_c_action" name="Ticket" sequence="10" parent="submenu_ticket_c_menu" action="act_ticket_c"/>
 </odoo> 

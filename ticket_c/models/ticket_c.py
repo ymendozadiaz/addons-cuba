@@ -2,17 +2,18 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details. 
 from odoo import api, fields, models, _
 from datetime import datetime 
+from odoo.exceptions import UserError
 
 class ticket_c(models.Model): 
     _name = 'ticket_c' 
-    _inherit = ['mail.thread','mail.activity.mixin']
+    _inherit = ['mail.thread','mail.activity.mixin','validate.account.move']
       
     name = fields.Char(string='Nombre', required=True, tracking=True) 
     
     reference = fields.Char(string='Order Reference', required=True, copy=False, readonly=True
                             , default=lambda self: _('New'))
     
-    precio = fields.Integer(string='precio', required=True, tracking=True) 
+    precio = fields.Integer(string='precio', default='100', required=True, tracking=True) 
      
     nota = fields.Text(string='nota', required=True, tracking=True) 
  

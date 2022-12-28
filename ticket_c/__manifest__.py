@@ -29,7 +29,7 @@
     'license': 'AGPL-3',
     'category': 'account.payment',
     'summary': 'Ejemplo de un m�dulo by Marlon.',
-    'depends': ['base','stock','mail'],
+    'depends': ['base','stock','mail','account'],
     'description': """
 Modulo basado en Marlon
 ===================================================== 
@@ -40,8 +40,12 @@ Modulo basado en Marlon
     'data': [
         'data/data.xml',
         'views/ticket_c_view.xml', 
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+        'report/report.xml',
+        #'wizard/ticket_report_view.xml',
+        'report/ticket.xml',
     ],
     'installable': True,
+    'application': True,
     'auto_install': False,
 }
