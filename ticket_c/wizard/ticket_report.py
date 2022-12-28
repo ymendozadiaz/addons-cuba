@@ -27,8 +27,8 @@ class TicketReportWizard(models.TransientModel):
         for ticket_c in ticket_cs:
             vals = {
                 'name': ticket_c.name,
-                'precio': ticket_c.precio,
-                'nota': ticket_c.nota,
+                'price': ticket_c.price,
+                'note': ticket_c.note,
             }
             ticket_c_list.append(vals)
         data = {

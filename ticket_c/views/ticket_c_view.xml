@@ -27,8 +27,8 @@
                     </div>                
                     <group> 
                         <field name="name"/>
-                        <field name="precio"/> 
-                        <field name="nota"/> 
+                        <field name="price"/> 
+                        <field name="note"/> 
                     </group>
                 </sheet> 
                 <div class="oe_chatter">
@@ -46,8 +46,8 @@
         <field name="arch" type="xml">
             <tree name="Ticket">
                 <field name="name" />
-                <field name="precio" />
-                <field name="nota" />
+                <field name="price" />
+                <field name="note" />
                 <field name="state" widget="badge" decoration-info="state == 'new'" decoration-success="state == 'finish'"/>
             </tree>
         </field>

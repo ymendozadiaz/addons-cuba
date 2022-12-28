@@ -24,14 +24,14 @@
                                             <tr>
                                                 <td>
                                                     <span>
-                                                        <strong>Precio</strong>
+                                                        <strong>price</strong>
                                                     </span>
                                                 </td>
                                                 <td>
                                                     <span>:</span>
                                                 </td>
                                                 <td>
-                                                    <span t-field="o.precio"/>
+                                                    <span t-field="o.price"/>
                                                 </td>
                                             </tr>
                                             <tr>

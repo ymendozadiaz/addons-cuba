@@ -8,14 +8,14 @@ class ticket_c(models.Model):
     _name = 'ticket_c' 
     _inherit = ['mail.thread','mail.activity.mixin','validate.account.move']
       
-    name = fields.Char(string='Nombre', required=True, tracking=True) 
+    name = fields.Char(string='name', required=True, tracking=True) 
     
     reference = fields.Char(string='Order Reference', required=True, copy=False, readonly=True
                             , default=lambda self: _('New'))
     
-    precio = fields.Integer(string='precio', default='100', required=True, tracking=True) 
+    price = fields.Integer(string='price', default='100', required=True, tracking=True) 
      
-    nota = fields.Text(string='nota', required=True, tracking=True) 
+    note = fields.Text(string='note', required=True, tracking=True) 
  
     state = fields.Selection([('new', 'new'), ('validated', 'Validated'), ('finish', 'finish'), ('cancel', 'Cancel')]
                                  , default='new', string="Status", tracking=True)
@@ -34,8 +34,8 @@ class ticket_c(models.Model):
 
     @api.model
     def create(self, vals):
-        if not vals.get('nota'):
-            vals['nota'] = "New Ticket"
+        if not vals.get('note'):
+            vals['note'] = "New Ticket"
         if vals.get('reference', _('New')) == _('New'):
             vals['reference'] = self.env['ir.sequence'].next_by_code('ticket_c') or _('New')
         res = super(ticket_c, self).create(vals)
