@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="ticket_form_view" model="ir.ui.view">
+        <field name="name">Ticket</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <form string="Ticket Cuba">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name_ticket"/>
+                            <field name="price"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ticket_cuba" model="ir.actions.act_window">
+        <field name="name">Ticket</field>
+        <field name="res_model">ticket.cuba</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first Ticket!
+            </p>
+        </field>    
+    </record>
+
+
+    <menuitem id="ticket_cuba_menu" name="Ticket cuba"/>
+    <menuitem id="ticket_menu" name="Ticket" parent="ticket_cuba_menu" action="action_ticket_cuba" />
+</odoo>
