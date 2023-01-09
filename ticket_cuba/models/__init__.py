@@ -1,1 +1,1 @@
-from . import ticketcuba, accountticket
+from . import ticketcuba

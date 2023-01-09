@@ -4,17 +4,19 @@
 {
     'name': 'ticket_cuba',
     'sequence': -150,
-    'sumary':"""
+    'sumary': """
     ticket_cuba
     """,
     'author': 'Yosbel Mendoza Díaz',
     'category': 'Extra Tools',
     'version': '1.0.0.0',
-    'depends': ['mail'],
+    'depends': ['mail','hr'],
     'data': [
-        'views/ticket_view.xml'
+        'security/ir.model.access.csv',
+        'views/ticket_view.xml',
+        'views/menu.xml'
         ],
     'installable': True,
     'application': True,
-    'license': 'LGPL-3',
+    'license': 'LGPL-3'
 }

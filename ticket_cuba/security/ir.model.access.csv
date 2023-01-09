@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ticket_cuba,access.ticket.cubac,model_ticket_cuba,,1,1,1,1
+ticket_cuba.access_ticket_cuba,access.ticket.cuba,ticket_cuba.model_ticket_cuba,base.group_user,1,1,1,1

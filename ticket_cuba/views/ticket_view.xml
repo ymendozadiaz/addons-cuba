@@ -1,35 +1,52 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <odoo>
-    <record id="ticket_form_view" model="ir.ui.view">
-        <field name="name">Ticket</field>
+    <record id="view_ticket_cuba_form" model="ir.ui.view">
+        <field name="name">ticket.cuba.form</field>
         <field name="model">ticket.cuba</field>
         <field name="arch" type="xml">
-            <form string="Ticket Cuba">
+            <form> 
                 <sheet>
                     <group>
-                        <group>
-                            <field name="name_ticket"/>
-                            <field name="price"/>
-                            <field name="note"/>
-                        </group>
+                        <field name="user_id"/>
+                        <field name="name_ticket"/>
+                        <field name="price"/>
+                        <field name="note"/>
                     </group>
+                </sheet> 
+                <sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <record id="view_ticket_cuba_tree" model="ir.ui.view">
+        <field name="name">ticket.cuba.tree</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id"/>
+                <field name="name_ticket"/>
+                <field name="price"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
     <record id="action_ticket_cuba" model="ir.actions.act_window">
-        <field name="name">Ticket</field>
+        <field name="name">Ticket order</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">ticket.cuba</field>
-        <field name="view_mode">tree,kanban,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                create your first Ticket!
-            </p>
-        </field>    
+        <field name="view_mode">tree,form</field>
     </record>
 
+    <menuitem id="submenu_ticket_order"
+              name="Order Tickets"
+              parent="submenu_ticket_barra"
+              action="action_ticket_cuba"
+              sequence="10"/>
 
-    <menuitem id="ticket_cuba_menu" name="Ticket cuba"/>
-    <menuitem id="ticket_menu" name="Ticket" parent="ticket_cuba_menu" action="action_ticket_cuba" />
+              
 </odoo>

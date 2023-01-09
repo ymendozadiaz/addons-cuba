@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_ticket_root" 
+              name="Ticket Cuba" 
+              sequence="10"/>
+
+    <menuitem id="submenu_ticket_barra"
+              name="Ticket"
+              parent="menu_ticket_root"
+              sequence="10"/>
+</odoo>
