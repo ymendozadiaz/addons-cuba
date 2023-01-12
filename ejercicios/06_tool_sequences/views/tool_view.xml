@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_tool_form" model="ir.ui.view"> 
+        <field name="name">ej.tool.form</field> 
+        <field name="model">ej.tool</field> 
+        <field name="arch" type="xml"> 
+            <form string="List of Tool">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code" readonly="1"/>
+                            <field name="user"/>
+                            <field name="exploitation_years"/>
+                        </group>
+                        <group>
+                            <field name="size"/>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_tree_tool" model="ir.ui.view"> 
+        <field name="name">ej.tool.tree</field> 
+        <field name="model">ej.tool</field> 
+        <field name="arch" type="xml"> 
+           <tree>
+                <field name="code" optional="show" readonly="1"/>
+                <field name="user" optional="show"/> 
+                <field name="exploitation_years" optional="hide"/> 
+                <field name="size" optional="hide"/> 
+                <field name="type" optional="hide"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_tool"> 
+        <field name="name">tool</field> 
+        <field name="res_model">ej.tool</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="view_id"  ref="view_tree_tool" /> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_tool_menu" name="Tool" web_icon="stock,static/description/icon.png" sequence="10"/> 
+<menuitem id="submenu_ej_tool_menu" name="Tool" sequence="10" parent="ej_tool_menu"/> 
+<menuitem id="submenu_ej_tool_action" name="Tool" sequence="10" parent="submenu_ej_tool_menu" action="act_ej_tool"/> 
+</odoo> 

@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tool
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20221226\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-11 18:56+0000\n"
+"PO-Revision-Date: 2023-01-11 14:02-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: tool
+#: model:ir.model.fields.selection,name:tool.selection__ej_tool__type__allien
+msgid "Allien"
+msgstr "Allien"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: tool
+#: model:ir.model.fields.selection,name:tool.selection__ej_tool__type__cube
+msgid "Cube"
+msgstr "Cubo"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: tool
+#: model:ir.model.fields.selection,name:tool.selection__ej_tool__type__english
+msgid "English"
+msgstr "Inglesa"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__id
+msgid "ID"
+msgstr "ID"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en "
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: tool
+#: model_terms:ir.ui.view,arch_db:tool.view_ej_tool_form
+msgid "List of Tool"
+msgstr "Listado de Herramientas"
+
+#. module: tool
+#: model:ir.model.fields.selection,name:tool.selection__ej_tool__type__spanish
+msgid "Spanish"
+msgstr "Española"
+
+#. module: tool
+#: model:ir.ui.menu,name:tool.ej_tool_menu
+#: model:ir.ui.menu,name:tool.submenu_ej_tool_action
+#: model:ir.ui.menu,name:tool.submenu_ej_tool_menu
+msgid "Tool"
+msgstr "Herramientas"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__user
+msgid "User"
+msgstr "User"
+
+#. module: tool
+#: model:ir.model,name:tool.model_ej_tool
+msgid "ej.tool"
+msgstr "ej.herramienta"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__exploitation_years
+msgid "exploitation_years"
+msgstr "Años de Explotación"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__size
+msgid "size"
+msgstr "Tamaño"
+
+#. module: tool
+#: model:ir.actions.act_window,name:tool.act_ej_tool
+msgid "tool"
+msgstr "Herramientas"
+
+#. module: tool
+#: model:ir.model.fields,field_description:tool.field_ej_tool__type
+msgid "type"
+msgstr "Tipo"

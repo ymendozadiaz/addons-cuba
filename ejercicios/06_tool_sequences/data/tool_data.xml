@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="data_tool_02" model="ej.tool">
+            <field name="user">Yosbel Mendoza Díaz</field>
+            <field name="exploitation_years">2020</field>
+            <field name="size">10-10</field>
+            <field name="type">cube</field>
+        </record>
+        <record id="data_tool_03" model="ej.tool">
+            <field name="user">Yosbel Mendoza Díaz</field>
+            <field name="exploitation_years">2016</field>
+            <field name="size">14-17</field>
+            <field name="type">english</field>
+        </record>
+    </data>
+</odoo>

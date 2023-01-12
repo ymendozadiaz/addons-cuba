@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tool_inh_form" model="ir.ui.view">
+        <field name="name">view.el.tool.inh.form</field>
+        <field name="model">ej.tool</field>
+        <field name="inherit_id" ref="01_tool_hola_mundo.view_ej_tool_form"/>
+        <field name="arch" type="xml">
+            <field name="user" position="after">
+                <field name="is_good_conditions" />
+                <field name="is_not_good_conditions" />
+                <field name="mydb" />
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_tool_inh_tree" model="ir.ui.view">
+        <field name="name">view.tool.inh.tree</field>
+        <field name="model">ej.tool</field>
+        <field name="inherit_id" ref="01_tool_hola_mundo.view_tree_tool"/>
+        <field name="arch" type="xml">
+            <field name="user" position="after">
+                <field name="is_good_conditions" />
+                <field name="is_not_good_conditions" />
+                <field name="mydb" />
+            </field>
+        </field>
+    </record>
+</odoo>

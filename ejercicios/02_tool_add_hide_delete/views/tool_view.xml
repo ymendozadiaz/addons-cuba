@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_ej_tool_inh_form" model="ir.ui.view">
+        <field name="name">view.ej.tool.inh.form</field>
+        <field name="model">ej.tool</field>
+        <field name="inherit_id" ref="01_tool_hola_mundo.view_ej_tool_form"/>
+        <field name="arch" type="xml">
+            <field name="user" position="after">
+                <field name="good_conditions" widget="boolean_toggle" />
+            </field>
+
+            <field name="exploitation_years" position="replace">
+                <field name="use_time" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_ej_tool">
+        <field name="name">tool</field>
+        <field name="res_model">ej.tool</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="01_tool_hola_mundo.view_tree_tool" />
+    </record>
+</odoo> 
