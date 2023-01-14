@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+<!--definiendo la vista kanban-->
     <record id="view_ticket_cuba_kanban" model="ir.ui.view">
         <field name="name">ticket.cuba.kanban"</field>
         <field name="model">ticket.cuba</field>
@@ -22,6 +23,10 @@
                                         <field name="user_id"/>
                                     </li>
                                     <li>
+                                        name ticket id:
+                                        <field name="name_ticket_id"/>
+                                    </li>
+                                    <li>
                                         name ticket:
                                         <field name="name_ticket"/>
                                     </li>
@@ -33,6 +38,10 @@
                                         description:
                                         <field name="description"/>
                                     </li>
+                                    <li>
+                                        state:
+                                        <field name="state"/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -41,6 +50,8 @@
             </kanban>
         </field>
     </record>
+
+<!--definiendo la vista form-->
     <record id="view_ticket_cuba_form" model="ir.ui.view">
         <field name="name">ticket.cuba.form</field>
         <field name="model">ticket.cuba</field>
@@ -50,12 +61,13 @@
                     <button name="button_validated" string="Validated" type="object" states="new" class="oe_highlight"/>
                     <button name="button_new" string="New" type="object" states="finish" class="oe_highlight"/>
                     <button name="button_finish" string="Finish" type="object" states="validated" class="oe_highlight"/>
-                    <field name="state" widget="statusbar"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validated,finished"/>
                 </header>
                 <sheet>
                     <group>
                         <field name="code"/>
                         <field name="user_id"/>
+                        <field name="name_ticket_id"/>
                         <field name="name_ticket"/>
                         <field name="price"/>
                         <field name="description"/>
@@ -64,12 +76,15 @@
                 <sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
                         <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
                     </div>
                 </sheet>
             </form>
         </field>
     </record>
+
+<!--definiendo la vista Tree-->
     <record id="view_ticket_cuba_tree" model="ir.ui.view">
         <field name="name">ticket.cuba.tree</field>
         <field name="model">ticket.cuba</field>
@@ -77,19 +92,23 @@
             <tree>
                 <field name="code" optional="show"/>
                 <field name="user_id" optional="show"/>
+                <field name="name_ticket_id" optional="show"/>
                 <field name="name_ticket" optional="show"/>
                 <field name="price" optional="show"/>
                 <field name="description" optional="show"/>
+                <field name="state" widget="badget" decoration-info="state == 'draft'" decoration-success="state =='finished'" optional="show"/>
             </tree>
         </field>
     </record>
 
+<!--definiendo la vista de búsqueda-->
     <record id="ticket_search" model="ir.ui.view">
         <field name="name">ticket.cuba.search</field>  
         <field name="model">ticket.cuba</field>
         <field name="arch" type="xml">
             <search string="Tickets">
                 <field name="user_id"/>
+                <field name="name_ticket_id"/>
                 <field name="name_ticket"/>
                 <field name="price"/>
                 <field name="description"/>
@@ -115,9 +134,20 @@
             </p>
         </field>
     </record>
+
+     <menuitem id="menu_ticket_root" 
+              name="Ticket Cuba" 
+              sequence="10"/>
+
+    <menuitem id="submenu_ticket_bar"
+              name="Ticket"
+              parent="menu_ticket_root"
+              sequence="10"/>
+    
     <menuitem id="submenu_ticket_order"
               name="Order Tickets"
-              parent="submenu_ticket_barra"
+              parent="submenu_ticket_bar"
               action="action_ticket_cuba"
               sequence="10"/>
+
 </odoo>

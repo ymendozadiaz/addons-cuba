@@ -15,7 +15,7 @@
         'security/ir.model.access.csv',
         'data/ir_sequence.xml',
         'views/ticket_view.xml',
-        'views/menu.xml'
+        'views/account_ticket_view.xml'
         ],
     'installable': True,
     'application': True,
