@@ -9,7 +9,7 @@ class AccountTicket(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Account Ticket"
     
-    reference = fields.Char(string='Reference', required=True, copy= False, readonly=1, default=lambda self: _('New'))
+    code = fields.Char(string='code', required=True, copy= False, readonly=1, default=lambda self: _('New'))
     
     name_ticket_id = fields.Many2one('ticket.cuba', string="Name Ticket", required=True, tracking=True)
     
@@ -39,11 +39,11 @@ class AccountTicket(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('reference', "New") == "New":
-            vals['reference'] = self.env['ir.sequence'].next_by_code(
-                'account.ticket') or "New"
-        accticket = super(AccountTicket, self).create(vals)
-        return accticket
+        if vals.get('code', "New") == "New":
+            vals['code'] = self.env['ir.sequence'].next_by_code(
+                'ticket.cuba') or "New"
+        accountticket = super(AccountTicket, self).create(vals)
+        return accountticket
 
 
 class OperationsLines(models.Model):
