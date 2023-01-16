@@ -11,7 +11,7 @@ class AccountTicket(models.Model):
     
     code = fields.Char(string='code', required=True, copy= False, readonly=1, default=lambda self: _('New'))
     
-    name_ticket_id = fields.Many2one('ticket.cuba', string="Name Ticket", required=True, tracking=True)
+    name_ticket_id = fields.Many2one('ticket.cuba', string="Name Ticket", required=True)
     
     price = fields.Integer(string="Order Price", required=True)
 
@@ -21,7 +21,7 @@ class AccountTicket(models.Model):
 
     description = fields.Text(string='description')
 
-    operations_line_ids = fields.One2many('account.operations.lines', 'accountticket_id',
+    operations_line_ids = fields.One2many('operations.lines', 'accountticket_id',
                                             string="Operations Lines")
 
     state = fields.Selection([('draft', 'Draft'), ('validated', 'Validated'), ('finished', 'Finished')],
@@ -47,7 +47,7 @@ class AccountTicket(models.Model):
 
 
 class OperationsLines(models.Model):
-    _name = "account.operations.lines"
+    _name = "operations.lines"
     _description = "Account ticket Operations Lines"
 
     accountticket_id = fields.Many2one('account.ticket', string="Ticket")

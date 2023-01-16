@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_ticket_id_detail">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="text-center">
+                        <h2>Account Ticket Details</h2>
+                    </div>
+                    <!--<table>
+                        <tr>
+                            <td>Name Ticket</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_date.get('name_ticket_id')">
+                                    <t t-esc="form['name_ticket_id'][1]"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date Account</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_date.get('date_account')">
+                                    <t t-esc="form['date_account']"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date Pay</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_date.get('date_pay')">
+                                    <t t-esc="form['date_pay']"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </table>-->
+                    <br/>
+                    <t t-if="o.account.ticket_id">
+                        <span>Account Ticket </span>
+                        <table class ="table table-sm o_main_table" name="account.ticket">
+                            <thead>
+                                <tr>
+                                    <th name="th_name" class="text-left">
+                                        <span>name</span>
+                                    </th>
+                                    <th name="th_topay" class="text-left">
+                                        <span>topay</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <t t-set="accountticket_count" t-value="0"/>
+                            <t t-foreach="accountticket_ids" t-as="line">
+                                <t t-set="accountticket_count" t-value="account.ticket_count + 1"/>
+                                <tr>
+                                    <td>
+                                        <span t-esc="line.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.topay"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td colspan="2">
+                            Total Account Ticket
+                        </td>
+                                <td>
+                                    <t t-esc="account_ticket_count"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

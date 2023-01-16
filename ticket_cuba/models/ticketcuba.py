@@ -9,7 +9,6 @@ class TicketCuba(models.Model):
 
     code = fields.Char(string='code', required=True, copy= False, readonly=1, default=lambda self: _('New'))
     user_id = fields.Many2one('res.users', string='Creado', default=lambda self: self.env.user, tracking=True, readonly="False")
-    name_ticket_id = fields.Many2one('res.partner', string="Customer")
     name_ticket = fields.Char(string='Name', required=True, tracking=True)
     price = fields.Integer(string="Price", tracking=True)
     description = fields.Char(string='Description', tracking=True)

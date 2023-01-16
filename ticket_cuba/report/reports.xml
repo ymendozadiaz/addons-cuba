@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="report_account_ticket_detail" model="ir.actions.report">
+            <field name="name">Modelo Account Ticket</field>
+            <field name="model">account.ticket</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ticket_cuba.report_account_ticket_id_detail</field>
+            <field name="report_file">ticket_cuba.report_account_ticket_id_detail</field>
+<!--            <field name="print_report_name">'Model - %s' % object.name</field>-->
+            <field name="binding_model_id" ref="model_account_ticket"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+
+</odoo>

@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ticket_cuba,access.ticket.cuba,model_ticket_cuba,,1,1,1,1
 access_account_ticket,access.account.ticket,model_account_ticket,,1,1,1,1
-access_account_operations_lines,accessaccount.operations.lines,model_account_operations_lines,,1,1,1,1
+access_operations_lines,access.operations.lines,model_operations_lines,,1,1,1,1

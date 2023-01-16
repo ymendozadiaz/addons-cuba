@@ -23,10 +23,6 @@
                                         <field name="user_id"/>
                                     </li>
                                     <li>
-                                        name ticket id:
-                                        <field name="name_ticket_id"/>
-                                    </li>
-                                    <li>
                                         name ticket:
                                         <field name="name_ticket"/>
                                     </li>
@@ -61,13 +57,12 @@
                     <button name="button_validated" string="Validated" type="object" states="new" class="oe_highlight"/>
                     <button name="button_new" string="New" type="object" states="finish" class="oe_highlight"/>
                     <button name="button_finish" string="Finish" type="object" states="validated" class="oe_highlight"/>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,validated,finished"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validated,finish"/>
                 </header>
                 <sheet>
                     <group>
                         <field name="code"/>
                         <field name="user_id"/>
-                        <field name="name_ticket_id"/>
                         <field name="name_ticket"/>
                         <field name="price"/>
                         <field name="description"/>
@@ -92,11 +87,10 @@
             <tree>
                 <field name="code" optional="show"/>
                 <field name="user_id" optional="show"/>
-                <field name="name_ticket_id" optional="show"/>
                 <field name="name_ticket" optional="show"/>
                 <field name="price" optional="show"/>
                 <field name="description" optional="show"/>
-                <field name="state" widget="badget" decoration-info="state == 'draft'" decoration-success="state =='finished'" optional="show"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state =='finish'" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -108,7 +102,6 @@
         <field name="arch" type="xml">
             <search string="Tickets">
                 <field name="user_id"/>
-                <field name="name_ticket_id"/>
                 <field name="name_ticket"/>
                 <field name="price"/>
                 <field name="description"/>

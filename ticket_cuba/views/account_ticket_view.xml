@@ -11,7 +11,7 @@
                 <field name="price"/>
                 <field name="date_account"/>
                 <field name="date_pay"/>
-                <field name="state" widget="badget" decoration-info="state == 'draft'" decoration-success="state =='finished'"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state =='finished'"/>
             </tree>
         </field>
     </record>
