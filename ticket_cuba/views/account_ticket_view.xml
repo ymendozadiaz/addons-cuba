@@ -51,12 +51,12 @@
                             <field name="operations_line_ids">
                                 <tree editable="botton">
                                     <field name="name"/>
-                                    <field name="Topay"/>
+                                    <field name="topay"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <field name="name"/>
-                                        <field name="Topay"/>
+                                        <field name="topay"/>
                                     </group>
                                 </form>
                             </field>

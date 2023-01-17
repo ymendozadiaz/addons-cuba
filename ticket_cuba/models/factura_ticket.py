@@ -15,7 +15,7 @@ class AccountTicket(models.Model):
     
     price = fields.Integer(string="Order Price", required=True)
 
-    date_account = fields.Date(string="Date Account", required=True,)
+    date_account = fields.Date(string="Date Account", required=True, default=fields.Date.context_today)
 
     date_pay = fields.Datetime(string="Date pay", required=True,)
 
@@ -52,6 +52,6 @@ class OperationsLines(models.Model):
 
     accountticket_id = fields.Many2one('account.ticket', string="Ticket")
     name = fields.Char(string="Operations", required=True,)
-    Topay = fields.Integer(string="To pay", required=True)
+    topay = fields.Integer(string="To pay", required=True)
 
     
