@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_ej_tool" model="ir.sequence">
+            <field name="name">Ej tool</field>
+            <field name="code">ej.tool</field>
+             <field name="prefix">EJH/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

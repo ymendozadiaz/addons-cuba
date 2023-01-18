@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <record id="form_wizard_tool_export_excel" model="ir.ui.view">
+            <field name="name">form.wizard.tool.export.excel</field>
+            <field name="model">tools.export.excel</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="tools_type"/>
+                        </group>
+                        </group>
+                    <footer>
+
+                        <button string="Export" name="export_tools_excel" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_export_tools_excel" model="ir.actions.act_window">
+            <field name="name">Export tools Excel</field>
+            <field name="res_model">tools.export.excel</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="submenu_export_tool_menu" 
+                  name="Export tool" 
+                  sequence="10" 
+                  parent="ej_tool_menu"/> 
+
+        <menuitem id="submenu_export_tool_excel"
+                  name="Export Tools Excel"
+                  action="action_export_tools_excel"
+                  parent="submenu_export_tool_menu"
+                  sequence="20"/>
+
+        </data>
+    </odoo>
+
+
+
+
+
