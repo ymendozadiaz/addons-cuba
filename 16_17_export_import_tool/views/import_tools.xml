@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>        
+        <record id="tools_import_view_tree" model="ir.ui.view">
+            <field name="name">tools.import.view.tree</field>
+            <field name="model">ej.tool</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user"/>
+                    <field name="code"/>
+                    <field name="exploitation_years"/>
+                    <field name="size"/>
+                    <field name="type"/>
+                    <field name="imported"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tools_import_view_form" model="ir.ui.view">
+            <field name="name">tools.import.view.form</field>
+            <field name="model">ej.tool</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+                    <button name="action_import" type="object"
+                        string="Import" class="oe_highlight"
+                        attrs="{'invisible': [('imported','=',True)]}"/>
+                </header>
+                <sheet>
+                    <group name="data">
+                        <field name="code" invisible="1"/>
+                        <group name="left">
+                             <field name="size" attrs="{'readonly': [('imported','=',True)]}"/>
+                             <field name="type" attrs="{'readonly': [('imported','=',True)]}"/>
+                        </group>
+                        <group name="right">
+                            <field name="imported" filename="file_name" widget="binary" class="oe_inline" attrs="{'readonly': [('imported','=',True)]}"/>
+                            <field name="imported" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="tool_import_view_action" model="ir.actions.act_window">
+            <field name="name">tool Import</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ej.tool</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem id="Tool_import_view_menu"
+                name="Tools Import"
+                parent="ej_tool_menu"
+                sequence="30"/>
+
+             <menuitem id="Tool_import_view_submenu"
+                name="Tools Import"
+                parent="Tool_import_view_menu"
+                action="tool_import_view_action"
+                sequence="30"/>
+    </data>
+</odoo>
