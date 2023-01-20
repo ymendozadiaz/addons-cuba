@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="model_external_layout">
+        <template id="model_internal_layout">
             <t t-if="not o and doc">
                 <t t-set="o" t-value="doc"/>
             </t>
@@ -48,6 +48,10 @@
                             <table style="width:100%;" class="table table-sm table-borderless">
                                 <thead>
                                     <tr class="text-center o_bordered_table">
+                                        <th>Fecha del pago</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    <tr class="text-center o_bordered_table">
                                         <th>Code</th>
                                         <th>Fecha</th>
                                     </tr>
@@ -76,7 +80,7 @@
         <template id="report_account_ticket_id_detail">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="ticket_cuba.model_external_layout">
+                    <t t-call="ticket_cuba.model_internal_layout">
                         <div class="page pt-3">
                             <div class="oe_structure pt-3"/>
                                 <div class="row o_txt_size">

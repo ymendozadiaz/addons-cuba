@@ -14,7 +14,7 @@ class TicketCuba(models.Model):
     description = fields.Char(string='Description', tracking=True)
     state = fields.Selection([('new', 'New'), 
                                ('validated', 'Validated'),
-                               ('finish', 'finish')], default='new', tracking=True)
+                               ('finish', 'Finish')], default='new', tracking=True)
 
 
     def button_validated(self):
@@ -39,9 +39,3 @@ class TicketCuba(models.Model):
         for rec in self:
             if rec.price == 0:
                 raise ValidationError(_("Price Cannot be Zero...!"))
-
-    def unlink(self):
-        if self.state == 'finish':
-            raise ValidationError(_("You cannot delete the ticket %s as it is in a finished status" % self.user_id))
-        return super(TicketCuba, self).unlink()
-         

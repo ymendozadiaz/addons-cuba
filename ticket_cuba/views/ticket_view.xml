@@ -143,4 +143,11 @@
               action="action_ticket_cuba"
               sequence="10"/>
 
+    <menuitem id="submenu_create_invoice"
+                  name="Create Invoice"
+                  action="action_create_invoice"
+                  parent="submenu_ticket_bar"
+                  sequence="20"/>
+
+    
 </odoo>

@@ -1,1 +1,1 @@
-from . import ticketcuba, factura_ticket
+from . import ticketcuba, factura_ticket, create_invoice

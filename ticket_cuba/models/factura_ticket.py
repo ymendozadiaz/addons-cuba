@@ -27,6 +27,8 @@ class AccountTicket(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('validated', 'Validated'), ('finished', 'Finished')],
                                  default='draft', string="Status", tracking=True)
 
+    
+
 
     def action_validated(self):
         self.state = 'validated'
@@ -53,5 +55,7 @@ class OperationsLines(models.Model):
     accountticket_id = fields.Many2one('account.ticket', string="Ticket")
     name = fields.Char(string="Operations", required=True,)
     topay = fields.Integer(string="To pay", required=True)
+
+    
 
     
