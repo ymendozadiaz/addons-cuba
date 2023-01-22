@@ -10,15 +10,12 @@
     'author': 'Yosbel Mendoza Díaz',
     'category': 'Extra Tools',
     'version': '1.0.0.0',
-    'depends': ['base','mail','hr', 'sale'],
+    'depends': ['base','mail','hr', 'sale','account'],
     'data': [
         'security/ir.model.access.csv',
         'data/ir_sequence.xml',
-        'views/ticket_view.xml',
-        'views/create_invoice_view.xml',
-        'views/account_ticket_view.xml',
-        'report/account_ticket_details.xml',
-        'report/reports.xml'
+        'wizard/create_invoice_wzd.xml',
+        'views/ticket_view.xml'
         ],
     'installable': True,
     'application': True,

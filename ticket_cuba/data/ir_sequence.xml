@@ -9,11 +9,12 @@
             <field name="company_id" eval="False"/>
         </record>
     </data>
+    
     <data noupdate="1">
-        <record id="seq_account_ticket" model="ir.sequence">
-            <field name="name">Account Ticket</field>
-            <field name="code">account.ticket</field>
-             <field name="prefix">TKA/%(range_year)s/</field>
+        <record id="seq_create_invoice" model="ir.sequence">
+            <field name="name">Create Invoice</field>
+            <field name="code">create.invoice.wzr</field>
+             <field name="prefix">ITC/%(range_year)s/</field>
             <field name="padding">5</field>
             <field name="company_id" eval="False"/>
         </record>

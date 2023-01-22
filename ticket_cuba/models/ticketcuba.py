@@ -7,6 +7,8 @@ class TicketCuba(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Ticket order"
 
+
+
     code = fields.Char(string='code', required=True, copy= False, readonly=1, default=lambda self: _('New'))
     user_id = fields.Many2one('res.users', string='Creado', default=lambda self: self.env.user, tracking=True, readonly="False")
     name_ticket = fields.Char(string='Name', required=True, tracking=True)
@@ -16,12 +18,16 @@ class TicketCuba(models.Model):
                                ('validated', 'Validated'),
                                ('finish', 'Finish')], default='new', tracking=True)
 
-
     def button_validated(self):
         self.state = 'validated'
+        # if self.state == 'validated':
+        #     return var1
+        # else:
+        #     raise ValidationError(_("The invoice has not been created!"))
 
-    def button_new(self):
-        self.state = 'new'
+
+    # def button_new(self):
+    #     self.state = 'new'
 
     def button_finish(self):
         self.state = 'finish'

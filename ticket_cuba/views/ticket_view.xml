@@ -55,8 +55,9 @@
             <form string="Tickets">
                 <header>
                     <button name="button_validated" string="Validated" type="object" states="new" class="oe_highlight"/>
-                    <button name="button_new" string="New" type="object" states="finish" class="oe_highlight"/>
+                    <!-- <button name="button_new" string="New" type="object"  states="validated" class="oe_highlight"/> -->
                     <button name="button_finish" string="Finish" type="object" states="validated" class="oe_highlight"/>
+                    <button name="%(action_create_invoice)d" string="Create Invoice" type="action" class="btn-primary"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,validated,finish"/>
                 </header>
                 <sheet>
@@ -97,7 +98,7 @@
 
 <!--definiendo la vista de búsqueda-->
     <record id="ticket_search" model="ir.ui.view">
-        <field name="name">ticket.cuba.search</field>  
+        <field name="name">ticket.cuba.search</field>
         <field name="model">ticket.cuba</field>
         <field name="arch" type="xml">
             <search string="Tickets">
@@ -106,11 +107,11 @@
                 <field name="price"/>
                 <field name="description"/>
                 <separator/>
-                <filter string="Created by" name="Created by" domain="[('user_id', '=', 'user_id')]" />
-                <filter string="Name ticket" name="Name ticket" domain="[('name_ticket', '=', 'name_ticket')]" />     
+                <filter string="Created by" name="user_id" domain="[('user_id', '=', 'user_id')]" />
+                <filter string="Name ticket" name="Name_ticket" domain="[('name_ticket', '=', 'name_ticket')]" />
                 <group expand="1" string="Group by">
                     <filter string="Created by" name="Created by" context="{'group_by':'user_id'}"/>
-                    <filter string="Name ticket" name="Name ticket" context="{'group_by':'name_ticket'}"/>
+                    <filter string="Name ticket" name="Name_ticket" context="{'group_by':'name_ticket'}"/>
                 </group>
             </search>
         </field>
@@ -128,26 +129,18 @@
         </field>
     </record>
 
-     <menuitem id="menu_ticket_root" 
-              name="Ticket Cuba" 
+    <menuitem id="menu_ticket_root"
+              name="Ticket Cuba"
               sequence="10"/>
 
     <menuitem id="submenu_ticket_bar"
               name="Ticket"
               parent="menu_ticket_root"
               sequence="10"/>
-    
+
     <menuitem id="submenu_ticket_order"
               name="Order Tickets"
               parent="submenu_ticket_bar"
-              action="action_ticket_cuba"
               sequence="10"/>
-
-    <menuitem id="submenu_create_invoice"
-                  name="Create Invoice"
-                  action="action_create_invoice"
-                  parent="submenu_ticket_bar"
-                  sequence="20"/>
-
-    
+              
 </odoo>
