@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--definiendo la vista Tree-->
+    <record id="view_account_ticket_tree" model="ir.ui.view">
+        <field name="name">account.ticket.tree</field>
+        <field name="model">account.ticket</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1">
+                <field name="code"/>
+                <field name="name_ticket_id"/>
+                <field name="price"/>
+                <field name="date_account"/>
+                <field name="date_pay"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state =='finished'"/>
+            </tree>
+        </field>
+    </record>
+    <!--definiendo la vista form-->
+    <record id="view_account_ticket_form" model="ir.ui.view">
+        <field name="name">account.ticket.form</field>
+        <field name="model">account.ticket</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button id="button_confirm" name="action_validated" string="Validated" class="btn_primary" states="draft"
+                            confirm="Are you sure that you need to Validated?" type="object" />
+                    <button id="button_finish" name="action_finished" string="Mark As finish" class="btn_primary" states="validated"
+                            confirm="Are you sure that you need to mark as finished?" type="object"/>
+                    <button id="button_draf" name="action_draft" string="Set to Draft" class="btn_primary" states="finished"
+                            confirm="Are you sure that you need to mark as set to Draft?" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validated" decoration-success="state == 'finished'"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" readonly="1"/><!--campo se secuencia-->
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name_ticket_id"/>
+                            <field name="price"/>
+                        </group>
+                        <group>
+                            <field name="date_account"/>
+                            <field name="date_pay"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Operations line ids" name="operations_line_ids">
+                            <field name="operations_line_ids">
+                                <tree editable="botton">
+                                    <field name="name"/>
+                                    <field name="topay"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="topay"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+<!--definiendo la vista de búsqueda    
+    <record id="view_account_ticket_search" model="ir.ui.view">
+        <field name="name">account.ticket.search</field>  
+        <field name="model">account.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Account Ticket">
+                <field name="name_ticket_id"/>
+                <separator/>
+                <group expand="1" string="Group by">
+                    <filter string="name ticket id" name="name_ticket_id" context="{'group_by':'name_ticket_id'}"/>
+                </group>
+                <searchpanel>
+                    <field name="Topay" string="Create by" icon="fa-exchange"/>
+                    <field name="state" string="Status" select="multi" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>-->   
+
+    <record id="action_account_ticket" model="ir.actions.act_window">
+        <field name="name">Account Ticket</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first Account Ticket!
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_account_root"
+              name="Account"
+              parent="menu_ticket_root"   
+              sequence="20"/>
+    <menuitem id="menu_account"
+              name="Account"
+              parent="menu_account_root" 
+              sequence="10"/>
+    <menuitem id="menu_create_account"
+              name="Create account"
+              parent="menu_account_root"
+              action="action_account_ticket"   
+              sequence="20"/>
+</odoo>

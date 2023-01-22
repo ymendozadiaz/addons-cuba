@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--definiendo la vista kanban-->
+    <record id="view_ticket_cuba_kanban" model="ir.ui.view">
+        <field name="name">ticket.cuba.kanban"</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <kanban default_order="id asc">
+                <field name="user_id"/>
+                <field name="name_ticket"/>
+                <field name="price"/>
+                <field name="description"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <field name="code"/>
+                                    </li>
+                                    <li>
+                                        Create by:
+                                        <field name="user_id"/>
+                                    </li>
+                                    <li>
+                                        name ticket:
+                                        <field name="name_ticket"/>
+                                    </li>
+                                    <li>
+                                        Price:
+                                        <field name="price"/>
+                                    </li>
+                                    <li>
+                                        description:
+                                        <field name="description"/>
+                                    </li>
+                                    <li>
+                                        state:
+                                        <field name="state"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+<!--definiendo la vista form-->
+    <record id="view_ticket_cuba_form" model="ir.ui.view">
+        <field name="name">ticket.cuba.form</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <form string="Tickets">
+                <header>
+                    <button name="button_validated" string="Validated" type="object" states="new" class="oe_highlight"/>
+                    <button name="button_new" string="New" type="object"  states="finish" class="oe_highlight"/>
+                    <button name="button_finish" string="Finish" type="object" states="validated" class="oe_highlight"/>
+                    <button name="%(action_create_invoice)d" string="Create Invoice" type="action" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validated,finish"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_invoices" type="object" class="oe_stat_button" ico="fa-calendar">
+                            <div class="o_stat_info">
+                                <field name="invoice_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Invoice</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="code"/>
+                        <field name="user_id"/>
+                        <field name="name_ticket"/>
+                        <field name="price"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--definiendo la vista Tree-->
+    <record id="view_ticket_cuba_tree" model="ir.ui.view">
+        <field name="name">ticket.cuba.tree</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" optional="show"/>
+                <field name="user_id" optional="show"/>
+                <field name="name_ticket" optional="show"/>
+                <field name="price" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state =='finish'" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+<!--definiendo la vista de búsqueda-->
+    <record id="ticket_search" model="ir.ui.view">
+        <field name="name">ticket.cuba.search</field>
+        <field name="model">ticket.cuba</field>
+        <field name="arch" type="xml">
+            <search string="Tickets">
+                <field name="user_id"/>
+                <field name="name_ticket"/>
+                <field name="price"/>
+                <field name="description"/>
+                <separator/>
+                <filter string="Created by" name="user_id" domain="[('user_id', '=', 'user_id')]" />
+                <filter string="Name ticket" name="Name_ticket" domain="[('name_ticket', '=', 'name_ticket')]" />
+                <group expand="1" string="Group by">
+                    <filter string="Created by" name="Created by" context="{'group_by':'user_id'}"/>
+                    <filter string="Name ticket" name="Name_ticket" context="{'group_by':'name_ticket'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ticket_cuba" model="ir.actions.act_window">
+        <field name="name">Ticket order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ticket.cuba</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                create your first Ticket!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_ticket_root"
+              name="Ticket Cuba"
+              sequence="10"/>
+
+    <menuitem id="submenu_ticket_bar"
+              name="Ticket"
+              parent="menu_ticket_root"
+              sequence="10"/>
+
+    <menuitem id="submenu_ticket_order"
+              name="Order Tickets"
+              parent="submenu_ticket_bar"
+              sequence="10"/>
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_ticket_cuba" model="ir.sequence">
+            <field name="name">Ticket cuba</field>
+            <field name="code">ticket.cuba</field>
+             <field name="prefix">TKC/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+    
+    <data noupdate="1">
+        <record id="seq_create_invoice" model="ir.sequence">
+            <field name="name">Create Invoice</field>
+            <field name="code">create.invoice.wzr</field>
+             <field name="prefix">ITC/%(range_year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+
+</odoo>
