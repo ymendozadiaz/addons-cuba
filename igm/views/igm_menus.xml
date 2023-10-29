@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+    <menuitem id="hgm_igm_menu" 
+              name="Igm" sequence="1"/> 
+
+    <menuitem id="submenu_hgm_igm_menu_bar" 
+              name="Datos Personales" 
+              sequence="1" 
+              parent="hgm_igm_menu"/> 
+
+    <menuitem id="submenu_hgm_igm_menu_action" 
+              name="Datos Personales" 
+              sequence="1" 
+              parent="submenu_hgm_igm_menu_bar" 
+              action="act_hgm_igm"/>
+
+    <menuitem id="submenu_hgm_studies_analysis_menu" 
+              name="Studies analysis" 
+              sequence="2" 
+              parent="hgm_igm_menu"/> 
+
+    <menuitem id="submenu_hgm_studies_analysis_action" 
+              name="Studies analysis" 
+              sequence="2" 
+              parent="submenu_hgm_studies_analysis_menu" 
+              action="act_hgm_studies_analysis"/> 
+
+    <menuitem id="submenu_export_excel" 
+              name="Export Analysis Excel" 
+              parent="hgm_igm_menu" 
+              sequence="3"/>
+
+    <menuitem id="submenu_export_analysis_excel" 
+              name="Export Analysis Excel" 
+              action="action_export_analysis_excel" 
+              parent="submenu_export_excel" 
+              sequence="3"/>
+
+</odoo>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Comentario en la Views -->
+    <record id="view_hgm_igm_form" model="ir.ui.view">
+        <field name="name">hgm.igm.form</field>
+        <field name="model">hgm.igm</field>
+        <field name="arch" type="xml">
+            <form string="list de Igm">
+                <header>
+                    <button name="button_draft" string="Draft" type="object" states="finished" class="oe_highlight"/>
+                    <button name="button_finished" string="Finished" type="object" class="oe_highlight"/>
+                    <field name="statusBar" widget="statusbar" statusbar_visible="draft,finish"/>
+                </header> 
+                <sheet>                    
+                    <div class="oe_button_box" name="button_box"><!-- smart button en la vista form -->
+                        <button name="action_open_studies_analysis" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Studies</span>
+                                <span class="o_stat_text">
+                                    <field name="analysis_count"/>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="address"/>
+                        <field name="area_health"/>
+                    </group>
+                    <group>
+                        <field name="fis"/>
+                        <field name="ftm"/>
+                    </group>
+                    <notebook>
+                        <page string="symptoms" name='Symptoms'>
+                            <group>
+                                <group>
+                                    <field name="fever" widget="boolean_toggle"/>
+                                    <field name="migraine" widget="boolean_toggle"/>
+                                    <field name="rash" widget="boolean_toggle"/>
+                                </group>
+                                <group>
+                                    <field name="pain_retrocular" widget="boolean_toggle"/>
+                                    <field name="uneasiness_gral" widget="boolean_toggle"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_igm" model="ir.ui.view">
+        <field name="name">hgm.igm.tree</field>
+        <field name="model">hgm.igm</field>
+        <field name="arch" type="xml">
+            <tree name='List of de IGMs'>
+                <field name="name" optional="show"/>
+                <field name="age" optional="show"/>
+                <field name="address" optional="show"/>
+                <field name="fis" optional='show'/>
+                <field name="ftm" optional="show"/>
+                <field name="fever" optional="show"/>
+                <field name="migraine" optional="show"/>
+                <field name="rash" optional="show"/>
+                <field name="pain_retrocular" optional="show"/>
+                <field name="uneasiness_gral" optional="show"/>
+                <field name="area_health" optional="show"/>
+                <field name="statusBar" string="Status" widget="badge" optional="show" decoration-info="statusBar == 'draft'" decoration-success="statusBar == 'finished'"/>
+            </tree>
+        </field>
+    </record>
+
+        <!--  Declaramos la accion -->
+    <record model="ir.actions.act_window" id="act_hgm_igm">
+        <field name="name">igm</field>
+        <field name="res_model">hgm.igm</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_igm"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    add you first Patient!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="hgm_igm_menu" 
+              name="Igm" sequence="1"/> 
+
+    <menuitem id="submenu_hgm_igm_menu_bar" 
+              name="Datos Personales" 
+              sequence="1" 
+              parent="hgm_igm_menu"/> 
+
+    <menuitem id="submenu_hgm_igm_menu_action" 
+              name="Datos Personales" 
+              sequence="1" 
+              parent="submenu_hgm_igm_menu_bar" 
+              action="act_hgm_igm"/>
+
+    <menuitem id="submenu_export_excel" 
+              name="Export Analysis Excel" 
+              parent="hgm_igm_menu" 
+              sequence="3"/>
+
+    <menuitem id="submenu_export_analysis_excel" 
+              name="Export Analysis Excel" 
+              action="action_export_analysis_excel" 
+              parent="submenu_export_excel" 
+              sequence="1"/>
+
+</odoo> 

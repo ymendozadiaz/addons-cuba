@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!-- Comentario en la Views -->
+	<record id="view_hgm_studies_analysis_form" model="ir.ui.view">
+		<field name="name">hgm.studies.analysis.form</field>
+		<field name="model">hgm.studies.analysis</field>
+		<field name="arch" type="xml">
+			<form string="list de Igm">
+				<header>
+					<button name="button_new" string="Create new" type="object" state="draft" class="oe_highlight" />
+					<button name="button_finished" string="Finished" type="object" state="new" class="oe_highlight" />
+					<button name="button_draft" string="Draft" type="object" state="finished" class="oe_highlight" />
+					<field name="statusBar" widget="statusbar" statusbar_visible="new,draft,finished" />
+				</header>
+				<sheet>
+					<group>
+						<field name="name_id" />
+						<field name="age" />
+						<field name="area_health" />
+					</group>
+					<group>
+						<field name="ftm" />
+						<field name="fsr" />
+						<field name="result" />
+						<field name="resultState" string="Result status" widget="badge" decoration-danger="resultState == 'positive'" decoration-success="resultState == 'negative'" />
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" />
+					<field name="activity_ids" />
+					<field name="message_ids" options="{'post_refresh': 'recipients'}" />
+				</div>
+			</form>
+		</field>
+	</record>
+	<record id="view_hgm_studies_analysis_tree" model="ir.ui.view">
+		<field name="name">hgm.studies.analysis.tree</field>
+		<field name="model">hgm.studies.analysis</field>
+		<field name="arch" type="xml">
+			<tree name="List of de IGMs">
+				<field name="name_id" />
+				<field name="age" />
+				<field name="area_health" />
+				<field name="ftm" />
+				<field name="fsr" />
+				<field name="result" />
+				<field name="resultState" string="Result Status" widget="badge" decoration-danger="resultState == 'positive'" decoration-success="resultState == 'negative'" />
+			</tree>
+		</field>
+	</record>
+	<!-- Declaramos la accion -->
+	<record model="ir.actions.act_window" id="act_hgm_studies_analysis">
+		<field name="name">Studies Analysis</field>
+		<field name="res_model">hgm.studies.analysis</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" ref="view_hgm_studies_analysis_form" />
+	</record>
+
+	<menuitem id="submenu_hgm_studies_analysis_menu" 
+              name="Studies analysis" 
+              sequence="1" 
+              parent="hgm_igm_menu"/> 
+
+    <menuitem id="submenu_hgm_studies_analysis_action" 
+              name="Studies analysis" 
+              sequence="1" 
+              parent="submenu_hgm_studies_analysis_menu" 
+              action="act_hgm_studies_analysis"/> 
+</odoo>

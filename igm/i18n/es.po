@@ -1,0 +1,514 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* igm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20230109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-16 16:51+0000\n"
+"PO-Revision-Date: 2023-02-16 12:54-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_igm_form
+msgid "<span class=\"o_stat_text\">Studies</span>"
+msgstr "Estudios"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_needaction
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesitada"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_ids
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_exception_decoration
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activity Exception Decoration"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_state
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_type_icon
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de Tipo de actividad"
+
+#. module: igm
+#. odoo-python
+#: code:addons/igm/wizard/analysis_export_excel.py:0
+#, python-format
+msgid "Address"
+msgstr "Dirección"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__analysis_export_excel__analysis_type__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__analysis_export_excel__analysis_type__all
+msgid "All"
+msgstr "Todos"
+
+#. module: igm
+#. odoo-python
+#: code:addons/igm/wizard/analysis_export_excel.py:0
+#, python-format
+msgid "Analysis"
+msgstr "Analisis"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__analysis_type
+msgid "Analysis Type"
+msgstr "Tipo de Analisis"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__analysis_export_excel__analysis_type__area_health
+msgid "Area_health"
+msgstr "Área de salud"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_attachment_count
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cuenta Calculada"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.form_wizard_analysis_export_excel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: igm
+#. odoo-python
+#: code:addons/igm/wizard/analysis_export_excel.py:0
+#, python-format
+msgid "Code"
+msgstr "Código"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__create_uid
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__create_uid
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__create_date
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__create_date
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__create_date
+msgid "Created on"
+msgstr "Creado en "
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__display_name
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__display_name
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__hgm_igm__statusBar__draft
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_igm_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.form_wizard_analysis_export_excel
+msgid "Export"
+msgstr "Exportar"
+
+#. module: igm
+#: model:ir.actions.act_window,name:igm.action_export_analysis_excel
+#: model:ir.model,name:igm.model_analysis_export_excel
+#: model:ir.ui.menu,name:igm.submenu_export_analysis_excel
+msgid "Export Analysis Excel"
+msgstr "Exportar Análisis en Excel"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_igm_form
+msgid "Finished"
+msgstr "Terminado"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_follower_ids
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_partner_ids
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores(Compañeros)"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__activity_type_icon
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Fuente el icono imponente por ejemplo los fa-tasks"
+
+#. module: igm
+#: model:ir.model,name:igm.model_hgm_igm
+msgid "HGM IGM"
+msgstr "HGM IGM"
+
+#. module: igm
+#: model:ir.model,name:igm.model_hgm_studies_analysis
+msgid "HGM Studies analysis"
+msgstr "HGM estudios de análisis"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__has_message
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__has_message
+msgid "Has Message"
+msgstr "Tienes un Mensaje"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__id
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__id
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__id
+msgid "ID"
+msgstr "ID"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_exception_icon
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__activity_exception_icon
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de la excepción."
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__message_needaction
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si verificó, los nuevos mensajes requieren su atención."
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__message_has_error
+#: model:ir.model.fields,help:igm.field_hgm_igm__message_has_sms_error
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__message_has_error
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si verificó, algunos mensajes tienen un error de la entrega."
+
+#. module: igm
+#: model:ir.ui.menu,name:igm.hgm_igm_menu
+#: model:ir.ui.menu,name:igm.submenu_hgm_igm_menu_action
+#: model:ir.ui.menu,name:igm.submenu_hgm_igm_menu_bar
+msgid "Igm"
+msgstr "IGM"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_is_follower
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel____last_update
+#: model:ir.model.fields,field_description:igm.field_hgm_igm____last_update
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en "
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__write_uid
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__write_uid
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_analysis_export_excel__write_date
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__write_date
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización en"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_main_attachment_id
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Raíz principal"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_has_error
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Entrega del mensaje"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_ids
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_ids
+msgid "Messages"
+msgstr "Mensaje"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__my_activity_date_deadline
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha topo de la actividad"
+
+#. module: igm
+#. odoo-python
+#: code:addons/igm/wizard/analysis_export_excel.py:0
+#: model:ir.model.fields.selection,name:igm.selection__analysis_export_excel__analysis_type__name
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__hgm_studies_analysis__resultState__negative
+msgid "Negative"
+msgstr "Negativo"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_date_deadline
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Luego la Fecha tope de Actividad"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_summary
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_summary
+msgid "Next Activity Summary"
+msgstr "Luego el Resumen de Actividad"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_type_id
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_type_id
+msgid "Next Activity Type"
+msgstr "Luego el Tipo de Actividad"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_needaction_counter
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Números de acciones"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_has_error_counter
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_has_error_counter
+msgid "Number of errors"
+msgstr "Números de errores"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__message_needaction_counter
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__message_has_error_counter
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con el error de la entrega"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__name_id
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__hgm_studies_analysis__resultState__positive
+msgid "Positive"
+msgstr "Positivo"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__activity_user_id
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__result
+msgid "Result"
+msgstr "Resultado "
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_studies_analysis_form
+msgid "Result status"
+msgstr "Estado del Resultado "
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__resultState
+msgid "Resultstate"
+msgstr "Estadoresultado"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__message_has_sms_error
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error al entregar SMS"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.view_tree_igm
+msgid "Status"
+msgstr "Estados"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__activity_state
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Los estados basaron en las actividades  \n"
+"Retrasado: La fecha debida ya se pasa  \n"
+"Hoy: La fecha de actividad es hoy  \n"
+"Planeado: Las actividades futuras."
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__statusBar
+msgid "Statusbar"
+msgstr "Barra de estado"
+
+#. module: igm
+#: model:ir.actions.act_window,name:igm.act_hgm_studies_analysis
+msgid "Studies Analysis"
+msgstr "Estudios de análisis"
+
+#. module: igm
+#: model:ir.ui.menu,name:igm.submenu_hgm_studies_analysis_action
+#: model:ir.ui.menu,name:igm.submenu_hgm_studies_analysis_menu
+msgid "Studies analysis"
+msgstr "Estudios de análisis"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__activity_exception_decoration
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de la excepción en el registro."
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__website_message_ids
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio Web"
+
+#. module: igm
+#: model:ir.model.fields,help:igm.field_hgm_igm__website_message_ids
+#: model:ir.model.fields,help:igm.field_hgm_studies_analysis__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web "
+
+#. module: igm
+#: model_terms:ir.actions.act_window,help:igm.act_hgm_igm
+msgid "add you first Patient!"
+msgstr "Agrega el primer paciente"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__address
+msgid "address"
+msgstr "dirección"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__age
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__age
+msgid "age"
+msgstr "edad"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__analysis_count
+msgid "analysis Count"
+msgstr "análisis contados"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__area_health
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__area_health
+msgid "area_health"
+msgstr "área de salud"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__fever
+msgid "fever"
+msgstr "fiebre"
+
+#. module: igm
+#: model:ir.model.fields.selection,name:igm.selection__hgm_igm__statusBar__finished
+msgid "finished"
+msgstr "terminado "
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__fis
+msgid "fis"
+msgstr "fis"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__fsr
+msgid "fsr"
+msgstr "fsr"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__ftm
+#: model:ir.model.fields,field_description:igm.field_hgm_studies_analysis__ftm
+msgid "ftm"
+msgstr "ftm"
+
+#. module: igm
+#: model:ir.actions.act_window,name:igm.act_hgm_igm
+msgid "igm"
+msgstr "igm"
+
+#. module: igm
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_igm_form
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_studies_analysis_form
+msgid "list de Igm"
+msgstr "listado de IGM"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__migraine
+msgid "migraine"
+msgstr "Dolor de cabeza"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__name
+msgid "name"
+msgstr "nombre"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__pain_retrocular
+msgid "pain_retrocular"
+msgstr "dolor retro-ocular"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__rash
+msgid "rash"
+msgstr "rash"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__symptoms
+#: model_terms:ir.ui.view,arch_db:igm.view_hgm_igm_form
+msgid "symptoms"
+msgstr "síntomas"
+
+#. module: igm
+#: model:ir.model.fields,field_description:igm.field_hgm_igm__uneasiness_gral
+msgid "uneasiness_gral"
+msgstr "malestar general "

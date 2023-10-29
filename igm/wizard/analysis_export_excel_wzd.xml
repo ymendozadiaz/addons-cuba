@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <record id="form_wizard_analysis_export_excel" model="ir.ui.view">
+            <field name="name">form.wizard.analysis.export.excel</field>
+            <field name="model">analysis.export.excel</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group name="main">
+                        <group name="left">
+                            <field name="analysis_type"/>
+                        </group>
+                        </group>
+                    <footer>
+                        <button string="Export" name="export_analysis_excel" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_export_analysis_excel" model="ir.actions.act_window">
+            <field name="name">Export Analysis Excel</field>
+            <field name="res_model">analysis.export.excel</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </odoo>
+
+
+
+
+

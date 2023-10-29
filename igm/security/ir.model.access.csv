@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hgm_igm,access.hgm.igm,model_hgm_igm,,1,1,1,1
+access_hgm_studies_analysis,access.hgm.studies.analysis,model_hgm_studies_analysis,,1,1,1,1
+access_analysis_export_excel,analysis.export.excel,model_analysis_export_excel,,1,1,1,1
